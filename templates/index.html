@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Image</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Generate an Image</h1>
+        <form method="POST" class="d-flex justify-content-center">
+            <input type="text" id="prompt" name="prompt" class="form-control w-50" placeholder="Enter your prompt" required>
+            <button type="submit" class="btn btn-primary ms-2">Generate</button>
+        </form>
+
+        {% if new_image_url %}
+            <h2 class="mt-4">Generated Image</h2>
+            <img src="{{ new_image_url }}" alt="Generated Image" class="img-fluid mt-3">
+        {% endif %}
+
+        {% if image_history %}
+            <h3 class="mt-5">History</h3>
+            <div class="row">
+                {% for image in image_history %}
+                    <div class="col-md-4 mt-3">
+                        <img src="{{ image }}" alt="History Image" class="img-fluid">
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
