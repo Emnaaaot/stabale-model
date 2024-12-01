@@ -5,7 +5,7 @@ import time
 
 app = Flask(__name__)
 
-API_KEY = ""
+API_KEY = "sk-HZiNPQvTfwh68RsYEE1kUeeH6TRth7Sn5npEwDgPKXlYoFUY"
 
 # Store generated images in a list for history
 image_history = []
