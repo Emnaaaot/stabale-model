@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Initialize variables
 image_history = []
-API_KEY = 'your_api_key_here'
+API_KEY = 'sk-HZiNPQvTfwh68RsYEE1kUeeH6TRth7Sn5npEwDgPKXlYoFUY'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
