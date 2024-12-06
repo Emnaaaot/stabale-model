@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, url_for, jsonify
 import requests
 import os
@@ -9,7 +10,6 @@ app = Flask(__name__)
 # Initialize variables
 image_history = []
 API_KEY = 'sk-HZiNPQvTfwh68RsYEE1kUeeH6TRth7Sn5npEwDgPKXlYoFUY'
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global image_history
@@ -27,7 +27,7 @@ def index():
                     "Content-Type": "application/json",
                     "Accept": "application/json"
                 },
-                json={
+                json={  # Send JSON body
                     "prompt": prompt,
                     "output_format": "webp",
                     "seed": 0,  # Optional: for reproducibility
